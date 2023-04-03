@@ -1,2 +1,7 @@
-pynq_z2_dds_afe_characterizer_test.*/
+pynq_z2_dds_afe_characterizer_test.cache/
+pynq_z2_dds_afe_characterizer_test.hw/
+pynq_z2_dds_afe_characterizer_test.runs/
+pynq_z2_dds_afe_characterizer_test.ip_user_files/
+pynq_z2_dds_afe_characterizer_test.sim/
+pynq_z2_dds_afe_characterizer_test.srcs/source_1/bd/
 pynq_z2_dds_afe_characterizer_test.xpr
