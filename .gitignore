@@ -4,4 +4,5 @@ pynq_z2_dds_afe_characterizer_test.runs/
 pynq_z2_dds_afe_characterizer_test.ip_user_files/
 pynq_z2_dds_afe_characterizer_test.sim/
 pynq_z2_dds_afe_characterizer_test.srcs/source_1/bd/
+**.swp
 pynq_z2_dds_afe_characterizer_test.xpr
