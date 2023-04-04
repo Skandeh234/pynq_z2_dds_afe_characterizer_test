@@ -4,10 +4,12 @@ module sample_buffer # (
 )(
   input wire clk, reset,
   Axis_If.Master_Full data_out, // packed pair of samples
-  Axis_If.Slave_Simple data_in,
-  input wire capture, // trigger capture of samples in buffer
-  output logic [21:0] debug
+  Axis_If.Slave_Simple phase_inc_in,
+  input wire capture//, // trigger capture of samples in buffer
+  //output logic [21:0] debug
 );
+
+Axis_If #(.DWIDTH(18)) data_in();
 
 assign data_in.ready = 1'b1; // always accept data; we might lose something at some point, but this should work fine
 
@@ -18,7 +20,7 @@ logic [$clog2(BUFFER_DEPTH)-1:0] write_addr, read_addr;
 logic capture_d;
 logic [63:0] buffer_data_in;
 
-assign debug = {state, write_addr, read_addr};
+//assign debug = {state, write_addr, read_addr};
 
 always @(posedge clk) begin
   if (reset) begin
@@ -66,22 +68,25 @@ always @(posedge clk) begin
 end
 
 
-// lfsr
-localparam [47:0] LFSR_POLY = 48'h3A00_0050_0000;
-logic [47:0] lfsr;
-always @(posedge clk) begin
-  if (reset) begin
-    lfsr <= 48'hB82E_DC58_BFFB;
-  end else begin
-    lfsr <= {^(lfsr & LFSR_POLY), lfsr[47:1]};
-  end
-end
+// lfsr to model noise
+logic [15:0] lfsr;
+lfsr16 lfsr_i (
+  .clk,
+  .reset,
+  .data_out(lfsr)
+);
 
 // buffer input
 always @(posedge clk) begin
-  buffer_data_in <= {data_in.data, data_in.data + lfsr[47:40]};
+  buffer_data_in <= {14'b0, data_in.data, 14'b0, (data_in.data + lfsr[7:0]) & {18{1'b1}}};
 end
 
+dds #(.PHASE_BITS(24), .OUTPUT_WIDTH(18), .QUANT_BITS(8)) dds_i (
+  .clk,
+  .reset,
+  .cos_out(data_in),
+  .phase_inc_in
+);
 
 endmodule
 
@@ -91,23 +96,23 @@ module sample_buffer_w (
   output [63:0] data_out,
   output data_out_valid, data_out_last,
   input data_out_ready,
-  input [31:0] data_in,
-  input data_in_valid,
-  output data_in_ready,
-  input wire capture,
-  output logic [21:0] debug
+  input [23:0] phase_inc_in,
+  input phase_inc_in_valid,
+  output phase_inc_in_ready,
+  input wire capture//,
+  //output logic [21:0] debug
 );
 
-Axis_If #(.DWIDTH(32)) data_in_if();
+Axis_If #(.DWIDTH(24)) phase_inc_in_if();
 Axis_If #(.DWIDTH(64)) data_out_if();
 
-sample_buffer #(.BUFFER_DEPTH(1024)) buffer_i (
+sample_buffer #(.BUFFER_DEPTH(16384)) buffer_i (
   .clk,
   .reset,
   .data_out(data_out_if),
-  .data_in(data_in_if),
-  .capture,
-  .debug
+  .phase_inc_in(phase_inc_in_if),
+  .capture
+  //.debug
 );
 
 assign data_out = data_out_if.data;
@@ -115,9 +120,9 @@ assign data_out_valid = data_out_if.valid;
 assign data_out_last = data_out_if.last;
 assign data_out_if.ready = data_out_ready;
 
-assign data_in_if.data = data_in;
-assign data_in_if.valid = data_in_valid;
-assign data_in_ready = data_in_if.ready;
-assign data_in_if.last = 1'b0; // this isn't connected, but we can tie it low to suppress the warning
+assign phase_inc_in_if.data = phase_inc_in;
+assign phase_inc_in_if.valid = phase_inc_in_valid;
+assign phase_inc_in_ready = phase_inc_in_if.ready;
+assign phase_inc_in_if.last = 1'b0; // this isn't connected, but we can tie it low to suppress the warning
 
 endmodule

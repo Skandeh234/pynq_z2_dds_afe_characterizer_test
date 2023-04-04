@@ -28,15 +28,12 @@ always @(posedge clk) begin
 end
 
 // dither LFSR
-localparam [15:0] LFSR_POLY = 16'hb400;
 logic [15:0] lfsr;
-always @(posedge clk) begin
-  if (reset) begin
-    lfsr <= 16'hace1;
-  end else begin
-    lfsr <= ({16{lfsr[0]}} & LFSR_POLY) ^ {1'b0, lfsr[15:1]};
-  end
-end
+lfsr16 lfsr_i (
+  .clk,
+  .reset,
+  .data_out(lfsr)
+);
 
 logic [PHASE_BITS-1:0] phase_dithered;
 generate
