@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="dds_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="dds_test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="5705001fs"></ZoomEndTime>
+      <Cursor1Time time="717900fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="490"></NameColumnWidth>
+      <ValueColumnWidth column_width="279"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject type="logic" fp_name="/dds_test/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/clk_fast">
+      <obj_property name="ElementShortName">clk_fast</obj_property>
+      <obj_property name="ObjectShortName">clk_fast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/freqs">
+      <obj_property name="ElementShortName">freqs[0:3][31:0]</obj_property>
+      <obj_property name="ObjectShortName">freqs[0:3][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/cos_vector_output_d">
+      <obj_property name="ElementShortName">cos_vector_output_d[0:4][17:0]</obj_property>
+      <obj_property name="ObjectShortName">cos_vector_output_d[0:4][17:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dds_test/cos_vector_output_d[0]">
+         <obj_property name="ElementShortName">[0][17:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dds_test/cos_vector_output_d[1]">
+         <obj_property name="ElementShortName">[1][17:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dds_test/cos_vector_output_d[2]">
+         <obj_property name="ElementShortName">[2][17:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dds_test/cos_vector_output_d[3]">
+         <obj_property name="ElementShortName">[3][17:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][17:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dds_test/cos_vector_output_d[4]">
+         <obj_property name="ElementShortName">[4][17:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][17:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+         <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/cos_dout">
+      <obj_property name="ElementShortName">cos_dout[17:0]</obj_property>
+      <obj_property name="ObjectShortName">cos_dout[17:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/vector_index">
+      <obj_property name="ElementShortName">vector_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">vector_index[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/parallel_index">
+      <obj_property name="ElementShortName">parallel_index[1:0]</obj_property>
+      <obj_property name="ObjectShortName">parallel_index[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/phi_vector_output_d">
+      <obj_property name="ElementShortName">phi_vector_output_d[0:4][23:0]</obj_property>
+      <obj_property name="ObjectShortName">phi_vector_output_d[0:4][23:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="divider65780" type="divider">
+      <obj_property name="label">dut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/dut_i/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/dut_i/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/phase_inc">
+      <obj_property name="ElementShortName">phase_inc[3:0][23:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_inc[3:0][23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/cycle_phase">
+      <obj_property name="ElementShortName">cycle_phase[23:0]</obj_property>
+      <obj_property name="ObjectShortName">cycle_phase[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/sample_phase">
+      <obj_property name="ElementShortName">sample_phase[3:0][23:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_phase[3:0][23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/lfsr">
+      <obj_property name="ElementShortName">lfsr[3:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">lfsr[3:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/phase_dithered">
+      <obj_property name="ElementShortName">phase_dithered[3:0][23:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_dithered[3:0][23:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/phase_quant">
+      <obj_property name="ElementShortName">phase_quant[3:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">phase_quant[3:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider65809" type="divider">
+      <obj_property name="label">cos_out interface</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/cos_out/data">
+      <obj_property name="ElementShortName">data[71:0]</obj_property>
+      <obj_property name="ObjectShortName">data[71:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/cos_out/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/cos_out/valid">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/cos_out/last">
+      <obj_property name="ElementShortName">last</obj_property>
+      <obj_property name="ObjectShortName">last</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider65796" type="divider">
+      <obj_property name="label">lfsr state</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/dut_i/lfsr_i/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/dut_i/lfsr_i/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/lfsr_i/data_out">
+      <obj_property name="ElementShortName">data_out[3:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[3:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/dut_i/lfsr_i/state_t">
+      <obj_property name="ElementShortName">state_t[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state_t[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider65803" type="divider">
+      <obj_property name="label">phase_inc interface</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/phase_inc_in/data">
+      <obj_property name="ElementShortName">data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/phase_inc_in/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/phase_inc_in/valid">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dds_test/phase_inc_in/last">
+      <obj_property name="ElementShortName">last</obj_property>
+      <obj_property name="ObjectShortName">last</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dds_test/phase_inc_in/DWIDTH">
+      <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>

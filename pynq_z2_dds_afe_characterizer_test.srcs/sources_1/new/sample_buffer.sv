@@ -9,7 +9,7 @@ module sample_buffer # (
   //output logic [21:0] debug
 );
 
-Axis_If #(.DWIDTH(18)) data_in();
+Axis_If #(.DWIDTH(4*18)) data_in();
 
 assign data_in.ready = 1'b1; // always accept data; we might lose something at some point, but this should work fine
 
@@ -73,15 +73,16 @@ logic [15:0] lfsr;
 lfsr16 lfsr_i (
   .clk,
   .reset,
+  .enable(1'b1),
   .data_out(lfsr)
 );
 
 // buffer input
 always @(posedge clk) begin
-  buffer_data_in <= {14'b0, data_in.data, 14'b0, (data_in.data + lfsr[7:0]) & {18{1'b1}}};
+  buffer_data_in <= {data_in.data[4*18-1-:16], data_in.data[3*18-1-:16], data_in.data[2*18-1-:16], data_in.data[17-:16]};
 end
 
-dds #(.PHASE_BITS(24), .OUTPUT_WIDTH(18), .QUANT_BITS(8)) dds_i (
+dds #(.PHASE_BITS(24), .OUTPUT_WIDTH(18), .QUANT_BITS(12), .PARALLEL_SAMPLES(4)) dds_i (
   .clk,
   .reset,
   .cos_out(data_in),
@@ -106,7 +107,7 @@ module sample_buffer_w (
 Axis_If #(.DWIDTH(24)) phase_inc_in_if();
 Axis_If #(.DWIDTH(64)) data_out_if();
 
-sample_buffer #(.BUFFER_DEPTH(16384)) buffer_i (
+sample_buffer #(.BUFFER_DEPTH(32768)) buffer_i (
   .clk,
   .reset,
   .data_out(data_out_if),
