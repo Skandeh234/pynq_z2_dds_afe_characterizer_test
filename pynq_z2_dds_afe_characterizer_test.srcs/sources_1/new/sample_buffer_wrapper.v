@@ -1,6 +1,6 @@
 module sample_buffer_wrapper (
   input wire clk, reset_n,
-  output [63:0] data_out,
+  output [127:0] data_out,
   output data_out_valid, data_out_last,
   input data_out_ready,
   input [23:0] phase_inc_in,
